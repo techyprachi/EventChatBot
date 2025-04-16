@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventPro Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <div class="bg-animation">
+            <div class="bubble bubble-1"></div>
+            <div class="bubble bubble-2"></div>
+            <div class="bubble bubble-3"></div>
+            <div class="bubble bubble-4"></div>
+            <div class="bubble bubble-5"></div>
+        </div>
+
+        <header class="app-header">
+            <div class="logo">
+                <i class="fas fa-calendar-star"></i>
+                <h1>EventPro</h1>
+            </div>
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+                    <li><a href="#"><i class="fas fa-search"></i> <span>Events</span></a></li>
+                    <li><a href="#"><i class="fas fa-plus-circle"></i> <span>Create</span></a></li>
+                    <li><a href="#"><i class="fas fa-ticket-alt"></i> <span>My Tickets</span></a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> <span>Profile</span></a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </header>
+
+        <div class="mobile-nav">
+            <ul>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-search"></i> Events</a></li>
+                <li><a href="#"><i class="fas fa-plus-circle"></i> Create</a></li>
+                <li><a href="#"><i class="fas fa-ticket-alt"></i> My Tickets</a></li>
+                <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+            </ul>
+        </div>
+        
+        <main class="app-content">
+            <div class="featured-events">
+                <h2>Featured Events</h2>
+                <div class="event-cards">
+                    <div class="event-card">
+                        <div class="event-image" style="background-image: url('/api/placeholder/400/200')">
+                            <span class="event-date">APR 20</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Splash-HoliFest</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> TMU, Moradabad</p>
+                            <p class="event-time"><i class="far fa-clock"></i> 2:00 PM - 10:00 PM</p>
+                            <div class="event-footer">
+                                <span class="event-price">100/-</span>
+                                <button class="btn-tickets">Get Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-image" style="background-image: url('/api/placeholder/400/200')">
+                            <span class="event-date">MAY 5</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>IEEE Conference 2025</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> TMU, Moradabad</p>
+                            <p class="event-time"><i class="far fa-clock"></i> 9:00 AM - 6:00 PM</p>
+                            <div class="event-footer">
+                                <span class="event-price">1000/-</span>
+                                <button class="btn-tickets">Get Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-image" style="background-image: url('/api/placeholder/400/200')">
+                            <span class="event-date">APR 30</span>
+                        </div>
+                        <div class="event-details">
+                            <h3>Ignite-CulturalEvent</h3>
+                            <p class="event-location"><i class="fas fa-map-marker-alt"></i> TMU, Moradabad</p>
+                            <p class="event-time"><i class="far fa-clock"></i> 12:00 PM - 8:00 PM</p>
+                            <div class="event-footer">
+                                <span class="event-price">300.00/-</span>
+                                <button class="btn-tickets">Get Tickets</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <div class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comments"></i>
+        </div>
+        
+        <div class="chatbot-wrapper" id="chatbot-wrapper">
+            <div class="chatbot-container">
+                <div class="chatbot-header">
+                    <div class="chatbot-title">
+                        <i class="fas fa-robot"></i>
+                        <h2>Event Assistant</h2>
+                    </div>
+                    <div class="chatbot-controls">
+                        <button id="chatbot-minimize">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="chatbot-messages" id="chatbot-messages">
+                    <!-- Messages will be dynamically inserted here -->
+                    <div class="message bot-message">
+                        <div class="bot-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            Hi there! I'm your Event Assistant. I can help you manage events, find tickets, or answer questions. What can I help you with today?
+                        </div>
+                    </div>
+                    <div id="messages-end"></div>
+                </div>
+                
+                <div class="chatbot-suggestions">
+                    <button class="suggestion-chip">Create Event</button>
+                    <button class="suggestion-chip">Find Events</button>
+                    <button class="suggestion-chip">Buy Tickets</button>
+                    <button class="suggestion-chip">Help</button>
+                </div>
+                
+                <form id="chatbot-form" class="chatbot-input-form">
+                    <input
+                        type="text"
+                        id="chatbot-input"
+                        placeholder="Type your message..."
+                        class="chatbot-input"
+                    />
+                    <button type="submit" class="chatbot-send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
